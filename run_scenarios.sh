@@ -11,9 +11,11 @@ pVacant=(0 0 1 1 1 1 1 1 1 1 1 1)
 pRooftop=(0 0 0 0 0 0 0 1 1 1 1 1)
 pCommercial=(0.00 0.00 0.00 0.25 0.50 0.75 1.00 0.00 0.25 0.50 0.75 1.00)
 
+spack load r
+
 for i in ${!seq[*]}
 do
   echo "${names[$i]} starts"
-  Rscript r_from_bash.R ${names[$i]} ${pGarden[$i]} ${pVacant[$i]} ${pRooftop[$i]} ${pCommercial[$i]}
+  Rscript estimate_scenarios_cluster.R ${names[$i]} ${pGarden[$i]} ${pVacant[$i]} ${pRooftop[$i]} ${pCommercial[$i]}
   echo "${names[$i]} ends"
 done

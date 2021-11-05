@@ -23,6 +23,7 @@ estimate_scenario <- function(pGardens, pVacant, pRooftop, pCommercial){
                                                 min_inh = 300)
   results$jobs <- ediblecity::edible_jobs(scenario, verbose = T)
   results$food <- ediblecity::food_production(scenario, verbose = T)
+  results$edible_area <- sum(scenario$edible_area, na.rm=T)
 
 
   return(results)
